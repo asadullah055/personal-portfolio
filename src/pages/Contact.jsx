@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="pt-3 px-3">
       <div className="flex justify-between items-center">
-        <h2 className="flex justify-between items-center text-[#666666] font-semibold text-[18px]">
+        <h2 className="flex justify-between items-center text-[#666666] font-semibold text-[20px]">
           {" "}
           <span className="text-gray-400 me-2">
             <GoDotFill />
@@ -23,7 +23,33 @@ const Contact = () => {
           <span className="hidden md:block">AVAILABLE FOR WORK</span>
         </Link>
       </div>
-      <h2>Contact Me</h2>
+      <div className="pt-5">
+        <h2 className="text-4xl text-[#373737] font-semibold py-3">
+          Contact Me
+        </h2>
+        <form className="pt-4">
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              className="border outline-none p-2 rounded-md bg-gray-100 text-[#666666]"
+              type="text"
+              placeholder="Your Name"
+            />
+            <input
+              className="border outline-none p-2 rounded-md bg-gray-100 text-[#666666]"
+              type="email"
+              placeholder="Your Email"
+            />
+          </div>
+          <textarea
+            className="border outline-none p-2 rounded-md bg-gray-100 text-[#666666] mt-3 w-full resize-none"
+            rows={10}
+            placeholder="Message"
+          ></textarea>
+          <button className="w-full bg-[#141414] text-white font-semibold text-[16px] rounded-md p-3 mt-2">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="mt-4">
       <div className="flex justify-between items-center px-3">
-        <h2 className="flex justify-between items-center text-[#666666] font-semibold text-[18px]">
+        <h2 className="flex justify-between items-center text-[#666666] font-semibold text-[20px]">
           {" "}
           <span className="text-gray-400 me-2">
             <GoDotFill />

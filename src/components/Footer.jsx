@@ -34,7 +34,7 @@ const Footer = () => {
             <span className="text-gray-300 me-2">
               <GoDotFill />
             </span>{" "}
-            Follow Mew
+            Follow Me
           </h2>
           <div className="flex gap-3 md:pe-4">
             <Link

@@ -45,7 +45,10 @@ const Contact = () => {
             rows={10}
             placeholder="Message"
           ></textarea>
-          <button className="w-full bg-[#141414] text-white font-semibold text-[16px] rounded-md p-3 mt-2">
+          <button
+            disabled
+            className="w-full bg-[#141414] text-white font-semibold text-[16px] rounded-md p-3 mt-2"
+          >
             Submit
           </button>
         </form>

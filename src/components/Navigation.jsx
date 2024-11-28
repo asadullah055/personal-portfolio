@@ -1,5 +1,4 @@
 import React from "react";
-import { BsMoon } from "react-icons/bs";
 import { CgBrowser, CgProfile } from "react-icons/cg";
 import { GrHomeRounded } from "react-icons/gr";
 import { Link } from "react-router-dom";
@@ -32,9 +31,9 @@ const Navigation = () => {
         <div>
           <li className="flex items-center space-x-4">
             {/* Dark Mode Toggle */}
-            <button className="text-2xl text-gray-400">
+            {/* <button className="text-2xl text-gray-400">
               <BsMoon />
-            </button>
+            </button> */}
 
             {/* Hire Me Button */}
             <HireMeButton />

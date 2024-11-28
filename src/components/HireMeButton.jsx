@@ -6,7 +6,7 @@ const HireMeButton = () => {
   return (
     <Link
       to="#"
-      className="flex items-center gap-2 p-2 bg-[#141414] text-white rounded-lg font-semibold"
+      className="flex items-center gap-2 p-2 bg-[#141414] text-white rounded-lg font-semibold shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.1)] transition-all duration-300 ease-in-out"
     >
       <span className="text-md">
         <CiCirclePlus />

@@ -7,7 +7,7 @@ import HireMeButton from "./HireMeButton";
 
 const Navigation = () => {
   return (
-    <nav className="shadow rounded-md max-w-[560px] p-3 px-4 mt-2 bg-white m-0 mx-auto">
+    <nav className="shadow rounded-md max-w-[560px] p-3 px-4 mt-2 bg-white m-0 mx-auto sticky top-2">
       <ul className="flex justify-between items-center w-full">
         {/* Left Section */}
         <div className="flex justify-between items-center gap-x-6">

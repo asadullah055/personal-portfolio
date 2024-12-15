@@ -1,8 +1,10 @@
 import React from "react";
 import { GoDotFill } from "react-icons/go";
-import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { projects } from "../assets/data";
+import ProjectCard from "../components/ProjectCard";
 const Project = () => {
+  console.log(projects);
+
   return (
     <div className="pt-3 px-3">
       <h2 className="flex items-center text-[#666666] font-medium text-[20px]">
@@ -23,51 +25,9 @@ const Project = () => {
       </p>
       <div className="border bg-[#F7F7F7] rounded-2xl mt-5">
         {/* my all projects  */}
-        <div className="bg-white p-4 py-6 m-2 rounded-md shadow">
-          <Link to="#" className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <div className="h-12 w-12 bg-gray-200 rounded-full text-4xl text-[#373737] font-bold grid place-items-center">
-                A
-              </div>
-              <div className="ps-2">
-                <h3 className="text-xl font-semibold text-[#373737]">
-                  Pinwheel
-                </h3>
-                <p className="text-[#666666] font-medium">
-                  Lorem ipsum dolor sit amet.
-                </p>
-              </div>
-            </div>
-            <div className="text-[20px] text-[#666666]">
-              <IoIosArrowForward />
-            </div>
-          </Link>
-        </div>
-        <div className="bg-white p-4 py-6 m-2 rounded-md shadow">
-          <Link to="#" className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              {/*  <img
-                className="h-12 w-12 rounded-full"
-                src={profileImage}
-                alt="img"
-              /> */}
-              <div className="h-12 w-12 bg-gray-200 rounded-full text-4xl text-[#373737] font-bold grid place-items-center">
-                A
-              </div>
-              <div className="ps-2">
-                <h3 className="text-xl font-semibold text-[#373737]">
-                  Pinwheel
-                </h3>
-                <p className="text-[#666666] font-medium">
-                  Lorem ipsum dolor sit amet.
-                </p>
-              </div>
-            </div>
-            <div className="text-[20px] text-[#666666]">
-              <IoIosArrowForward />
-            </div>
-          </Link>
-        </div>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
     </div>
   );

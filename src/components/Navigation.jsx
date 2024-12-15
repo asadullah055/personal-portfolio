@@ -10,18 +10,27 @@ const Navigation = () => {
       <ul className="flex justify-between items-center w-full">
         {/* Left Section */}
         <div className="flex justify-between items-center gap-x-6">
-          <li className="text-2xl text-gray-400">
+          <li className="text-2xl text-gray-400 relative group">
             <Link to="/" className="">
+              <span className="text-[12px] text-[#373737] font-semibold absolute top-[-25px] left-[-5px hidden group-hover:block">
+                Home
+              </span>
               <GrHomeRounded />
             </Link>
           </li>
-          <li className="text-2xl text-gray-400">
+          <li className="text-2xl text-gray-400 relative group">
             <Link to="/about" className="">
+              <span className="text-[12px] text-[#373737] font-semibold absolute top-[-25px] left-[-5px hidden group-hover:block">
+                About
+              </span>
               <CgProfile />
             </Link>
           </li>
-          <li className="text-2xl text-gray-400">
-            <Link to="/project" className="">
+          <li className="text-2xl text-gray-400 relative group">
+            <Link to="/about" className="">
+              <span className="text-[12px] text-[#373737] font-semibold absolute top-[-25px] left-[-8px] hidden group-hover:block">
+                Project
+              </span>
               <CgBrowser />
             </Link>
           </li>

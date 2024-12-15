@@ -1,92 +1,72 @@
 import React from "react";
 import { GoArrowRight, GoDotFill } from "react-icons/go";
-import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
-import profileImage from "../assets/image/pic.png";
+import { Link, useParams } from "react-router-dom";
+import { projects } from "../assets/data";
+import ProjectCard from "../components/ProjectCard";
 const ProjectDetails = () => {
+  const { id } = useParams();
+  const project = projects.find((project) => project.id === id);
+
   return (
     <div className="pt-3 px-1">
       <h2 className="text-[#373737] text-3xl font-bold pb-2">
-        <span>Pinwheel</span>{" "}
-        <span className="text-lg">(E-commerce | FULL STACK)</span>
+        <span>{project.name}</span>{" "}
+        <span className="text-lg">({project.category})</span>
       </h2>
       <div className="bg-[#f7f7f7] p-2 rounded-lg">
         <p className="text-[20px] font-semibold text-[#373737]">Features</p>
         <ul>
-          <li className="text-[#666] flex gap-1 items-center ">
-            <span className="text-gray-400 me-1">
-              <GoDotFill />
-            </span>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </li>
-          <li className="text-[#666] flex gap-1 items-center ">
-            <span className="text-gray-400 me-1">
-              <GoDotFill />
-            </span>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </li>
-          <li className="text-[#666] flex gap-1 items-center ">
-            <span className="text-gray-400 me-1">
-              <GoDotFill />
-            </span>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </li>
-          <li className="text-[#666] flex gap-1 items-center ">
-            <span className="text-gray-400 me-1">
-              <GoDotFill />
-            </span>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </li>
+          {project.features.map((item, i) => (
+            <li key={i} className="text-[#666] flex gap-1 items-center ">
+              <span className="text-gray-400 me-1">
+                <GoDotFill />
+              </span>
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="bg-[#f7f7f7] p-2 rounded-lg mt-3">
         <p className="text-[20px] font-semibold text-[#373737]">Technologies</p>
         <ul className="flex gap-2 flex-wrap pt-3">
-          <li className="capitalize border px-2 rounded-full bg-white">
-            React
-          </li>
-          <li className="capitalize border px-2 rounded-full bg-white">jwt</li>
-          <li className="capitalize border px-2 rounded-full bg-white">
-            expressjs
-          </li>
-          <li className="capitalize border px-2 rounded-full bg-white">
-            React
-          </li>
-          <li className="capitalize border px-2 rounded-full bg-white">jwt</li>
-          <li className="capitalize border px-2 rounded-full bg-white">
-            expressjs
-          </li>
-          <li className="capitalize border px-2 rounded-full bg-white">
-            React
-          </li>
-          <li className="capitalize border px-2 rounded-full bg-white">jwt</li>
-          <li className="capitalize border px-2 rounded-full bg-white">
-            expressjs
-          </li>
+          {project.technology.map((tec, i) => (
+            <li
+              key={i}
+              className="capitalize border px-2 rounded-full bg-white"
+            >
+              {tec}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex gap-2 mt-3 ">
-        <Link
-          target="_blank"
-          className="bg-[#141414] text-white px-2 py-1 rounded-md font-medium shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.2)] transition-all duration-300 ease-in-out text-[15px]"
-          to="#"
-        >
-          live Link
-        </Link>
-        <Link
-          target="_blank"
-          className="bg-[#141414] text-white px-2 py-1 rounded-md font-medium shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.2)] transition-all duration-300 ease-in-out text-[15px]"
-          to="#"
-        >
-          Backend code
-        </Link>
-        <Link
-          target="_blank"
-          className="bg-[#141414] text-white px-2 py-1 rounded-md font-medium shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.2)] transition-all duration-300 ease-in-out text-[15px]"
-          to="#"
-        >
-          Frontend code
-        </Link>
+        {project.liveLing && (
+          <Link
+            target="_blank"
+            className="bg-[#141414] text-white px-2 py-1 rounded-md font-medium shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.2)] transition-all duration-300 ease-in-out text-[15px]"
+            to={project.liveLing}
+          >
+            live Link
+          </Link>
+        )}
+        {project.backEndCode && (
+          <Link
+            target="_blank"
+            className="bg-[#141414] text-white px-2 py-1 rounded-md font-medium shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.2)] transition-all duration-300 ease-in-out text-[15px]"
+            to={project.backEndCode}
+          >
+            Backend code
+          </Link>
+        )}
+        {project.frontEndCode && (
+          <Link
+            target="_blank"
+            className="bg-[#141414] text-white px-2 py-1 rounded-md font-medium shadow hover:shadow-[0px_0px_1px_3px_rgba(0,_0,_0,_0.2)] transition-all duration-300 ease-in-out text-[15px]"
+            to={project.frontEndCode}
+          >
+            Frontend code
+          </Link>
+        )}
       </div>
       <div className="border bg-[#F7F7F7] rounded-2xl pt-1 pb-3 mt-4">
         <div className="flex justify-between items-center p-2">
@@ -108,50 +88,13 @@ const ProjectDetails = () => {
           </Link>
         </div>
         {/* my all projects  */}
-        <div className="bg-white p-4 py-6 m-2 rounded-md shadow">
-          <Link to="#" className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <img
-                className="h-12 w-12 rounded-full"
-                src={profileImage}
-                alt="img"
-              />
-              <div className="ps-2">
-                <h3 className="text-xl font-semibold text-[#373737]">
-                  Pinwheel
-                </h3>
-                <p className="text-[#666666] font-medium">
-                  Lorem ipsum dolor sit amet.
-                </p>
-              </div>
-            </div>
-            <div className="text-[20px] text-[#666666]">
-              <IoIosArrowForward />
-            </div>
-          </Link>
-        </div>
-        <div className="bg-white p-4 py-6 m-2 rounded-md shadow">
-          <Link to="#" className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <img
-                className="h-12 w-12 rounded-full"
-                src={profileImage}
-                alt="img"
-              />
-              <div className="ps-2">
-                <h3 className="text-xl font-semibold text-[#373737]">
-                  Pinwheel
-                </h3>
-                <p className="text-[#666666] font-medium">
-                  Lorem ipsum dolor sit amet.
-                </p>
-              </div>
-            </div>
-            <div className="text-[20px] text-[#666666]">
-              <IoIosArrowForward />
-            </div>
-          </Link>
-        </div>
+
+        {projects
+          .filter((pro) => pro.id !== id)
+          .slice(0, 2)
+          .map((item) => (
+            <ProjectCard key={item.id} project={item} />
+          ))}
       </div>
     </div>
   );

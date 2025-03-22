@@ -27,7 +27,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="text-2xl text-gray-400 relative group">
-            <Link to="/about" className="">
+            <Link to="/project" className="">
               <span className="text-[12px] text-[#373737] font-semibold absolute top-[-25px] left-[-8px] hidden group-hover:block">
                 Project
               </span>
